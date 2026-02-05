@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import CallIcon from "@mui/icons-material/Call";
 import { useTranslation } from "react-i18next";
 
-export function CallToActionSection() {
+export default function CallToActionSection() {
   const { t } = useTranslation();
   return (
     <section className="py-16 bg-gradient-to-r from-blue-700 to-red-500">

@@ -9,7 +9,7 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import { useTranslation } from "react-i18next";
 import { logo } from "@/assets/indxe.js";
-export function FooterSection() {
+export default function FooterSection() {
 
     const { t } = useTranslation();
   return (

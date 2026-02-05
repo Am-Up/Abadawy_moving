@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 // ==============================================
-export function AboutSection() {
+export default function AboutSection() {
   const { t } = useTranslation();
   return (
     <section className="py-16 bg-white">

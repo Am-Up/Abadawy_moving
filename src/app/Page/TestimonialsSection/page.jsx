@@ -31,7 +31,7 @@ const testimonials = [
   },
 ];
 
-export function TestimonialsSection() {
+export default function TestimonialsSection() {
   const { t } = useTranslation();
   return (
     <section className="py-16 bg-gray-50">
