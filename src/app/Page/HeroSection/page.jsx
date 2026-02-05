@@ -21,7 +21,7 @@ export default function page() {
           alt="خدمة نقل عفش في السعودية"
           fill
           quality={80}
-          priority
+          loading="lazy"
         />
 
         <div className="absolute w-full h-screen bg-white opacity-50"></div>
