@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 export default function AboutSection() {
   const { t } = useTranslation();
   return (
-    <section className="py-16 bg-white">
+    <section id="about" className="py-16 bg-white">
       <div className="container mx-auto px-4 max-w-[1200px] rtl">
         <div className="flex flex-col md:flex-row gap-6 items-center">
           <motion.div
@@ -19,12 +19,12 @@ export default function AboutSection() {
           >
             <Image
               src={About_img}
-              alt="Professional moving team"
+              alt="نحن شركة البدوي نقدم خدمة نقل الاثاث في السعودية"
               className="mx-auto object-cover rounded-lg shadow-[#333333] shadow-lg"
             />
           </motion.div>
           <div className="md:w-full flex flex-col gap-8">
-            <motion.h2
+            <motion.h3
               initial={{ x: 0, opacity: 0 }}
               viewport={{ once: true }}
               whileInView={{ x: 1, opacity: 1 }}
@@ -32,7 +32,7 @@ export default function AboutSection() {
               className="text-2xl md:text-4xl text-center md:text-start  font-bold text-gray-900 mb-6"
             >
               {t("about.title")}
-            </motion.h2>
+            </motion.h3>
             <motion.div
               initial={{ x: 0, opacity: 0 }}
               viewport={{ once: true }}

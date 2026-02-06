@@ -12,15 +12,15 @@ export default function HeroSection() {
   const { t } = useTranslation();
 
   return (
-    <section className="relative min-h-screen overflow-hidden flex flex-col gap-12 items-center justify-center">
+    <section id="hero" className="relative min-h-screen overflow-hidden flex flex-col gap-12 items-center justify-center">
       
       {/* Background Image */}
       <div className="absolute inset-0 -z-10">
         <Image
           src={hero}
-          alt="خدمة نقل عفش في السعودية"
+          alt="البدوي للنقل العفش في السعودية - فريق محترف لنقل الأثاث"
           fill
-          priority
+          priority={true}
           quality={80}
           className="object-cover object-[80%_20%] xl:object-center"
         />
@@ -33,7 +33,7 @@ export default function HeroSection() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
-          className="rtl:text-[26px] ltr:text-[25px] md:rtl:text-[56px] md:ltr:text-[36px] font-black text-center mt-4 mb-6"
+          className="rtl:text-[26px] ltr:text-[25px] md:rtl:text-[56px] md:ltr:text-[36px] font-black text-center mt-4 mb-2"
         >
           <span className="text-[#0D3B66]">
             {t("hero.titleStart")}
@@ -50,7 +50,7 @@ export default function HeroSection() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.3 }}
-          className="text-[#333333] rtl:text-sm w-full px-2 lg:w-2/5 text-center mx-auto"
+          className="text-[#333333] rtl:text-sm md:rtl:text-md w-full px-2 lg:w-3/5 text-center mx-auto"
         >
           {t("hero.description")}
         </motion.p>

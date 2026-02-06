@@ -7,12 +7,16 @@ import CallIcon from "@mui/icons-material/Call";
 import LanguageIcon from "@mui/icons-material/Language";
 import MenuIcon from "@mui/icons-material/Menu";
 import Image from "next/image";
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState, useRef } from "react";
 import { AppContext } from "@/app/Context.jsx";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function Header() {
   const { open, setOpen, setMenu, menu } = useContext(AppContext);
+
+  const [showNav, setShowNav] = useState(true);
+  const lastScrollY = useRef(0);
 
   useEffect(() => {
     if (menu) {
@@ -36,9 +40,34 @@ export default function Header() {
     setOpen(false);
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > lastScrollY.current) {
+        // بينزل لتحت
+        setShowNav(false);
+      } else {
+        // بيطلع لفوق
+        setShowNav(true);
+      }
+
+      lastScrollY.current = window.scrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <>
-      <header className="flex flex-row bg-[#0D3B66] w-full h-16 justify-between items-center px-4 lg:px-28 text-white relative">
+      <header
+        className={`fixed top-0 left-0 w-full h-16 bg-[#0D3B66] z-50 transition-transform duration-300 ${
+          showNav ? "translate-y-0" : "-translate-y-full"
+        } flex justify-between items-center px-4 lg:px-28 text-white`}
+      >
+        {" "}
         {/* Logo */}
         <motion.div
           initial={{ y: -50, opacity: 0 }}
@@ -46,7 +75,12 @@ export default function Header() {
           transition={{ duration: 0.5 }}
           className=""
         >
-          <Image className="w-28 md:w-36 " src={logo} alt="logo img" />
+          <Image
+            alt="لوجو الشركة البدوي للنقل العفش"
+            className="w-28 md:w-36 "
+            src={logo}
+            priority={true}
+          />
         </motion.div>
         <motion.div
           initial={{ y: -50, opacity: 0 }}
@@ -57,7 +91,6 @@ export default function Header() {
         >
           <MenuIcon fontSize="large" />
         </motion.div>
-
         {/* Nav */}
         <motion.nav
           initial={{ y: -50, opacity: 0 }}
@@ -67,20 +100,19 @@ export default function Header() {
         >
           <ul className="flex flex-row-reverse gap-10 text-lg cursor-pointer">
             <li>
-              <a href="">{t("navbar.testimonials")}</a>
+              <Link href="#Test">{t("navbar.testimonials")}</Link>
             </li>
             <li>
-              <a href="">{t("navbar.services")}</a>
+              <Link href="#services">{t("navbar.services")}</Link>
             </li>
             <li>
-              <a href="">{t("navbar.about")}</a>
+              <Link href="#about">{t("navbar.about")}</Link>
             </li>
             <li>
-              <a href="">{t("navbar.home")}</a>
+              <Link href="#hero">{t("navbar.home")}</Link>
             </li>
           </ul>
         </motion.nav>
-
         {/* Actions */}
         <motion.div
           initial={{ y: -50, opacity: 0 }}

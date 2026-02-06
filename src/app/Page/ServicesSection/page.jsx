@@ -7,7 +7,8 @@ import {
   CardHeader,
   CardTitle,
 } from "@/Components/UI/card.jsx";
-import { Truck, Wind, Bed } from "lucide-react";
+import { Truck, Wind, Bed , Warehouse } from "lucide-react";
+
 
 export default function ServicesSection() {
   const { t } = useTranslation();
@@ -17,8 +18,8 @@ export default function ServicesSection() {
       icon: Truck,
       title: t("services.items.moving"),
       description: t("services.items.movingDesc"),
-      bgColor: "bg-blue-100",
-      color: "text-blue-600",
+      bgColor: "bg-[#EE7418]/25",
+      color: "text-[#EE7418]",
     },
     {
       icon: Wind,
@@ -31,11 +32,11 @@ export default function ServicesSection() {
       icon: Bed,
       title: t("services.items.rooms"),
       description: t("services.items.roomsDesc"),
-      bgColor: "bg-blue-100",
-      color: "text-blue-600",
+      bgColor: "bg-[#EE7418]/25",
+      color: "text-[#EE7418]",
     },
     {
-      icon: Bed,
+      icon: Warehouse,
       title: t("services.items.storage"),
       description: t("services.items.storageDesc"),
       bgColor: "bg-blue-100",
@@ -44,7 +45,7 @@ export default function ServicesSection() {
   ];
 
   return (
-    <section className="py-16 bg-[#E5E7EB]">
+    <section id="services" className="py-16 bg-[#E5E7EB]">
       <div className="container mx-auto px-4 rtl max-w-[1200px]">
         <motion.div
           initial={{ y: 0, opacity: 0 }}

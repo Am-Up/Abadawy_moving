@@ -34,7 +34,7 @@ const testimonials = [
 export default function TestimonialsSection() {
   const { t } = useTranslation();
   return (
-    <section className="py-16 bg-gray-50">
+    <section id="Test" className="py-16 bg-gray-50">
       <div className="container mx-auto px-4 max-w-[1200px] rtl">
         <motion.div
           initial={{ y: 0, opacity: 0 }}
@@ -42,9 +42,9 @@ export default function TestimonialsSection() {
           transition={{ duration: 1 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h5 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             {t("testimonials.title")}
-          </h2>
+          </h5>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             {t("testimonials.title")}
           </p>

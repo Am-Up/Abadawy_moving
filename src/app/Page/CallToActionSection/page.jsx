@@ -14,9 +14,9 @@ export default function CallToActionSection() {
         className="container mx-auto px-4 rtl"
       >
         <div className="text-center text-white">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h4 className="text-3xl md:text-4xl font-bold mb-4">
             {t("callToAction.title")}
-          </h2>
+          </h4>
           <p className="text-sm md:text-lg mb-8 opacity-90">
             {t("callToAction.description")}
           </p>
