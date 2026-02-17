@@ -13,7 +13,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 
 export default function Header() {
-  const { open, setOpen, setMenu, menu } = useContext(AppContext);
+  const { open, setOpen, setMenu, menu ,handlePhoneClick} = useContext(AppContext);
 
   const [showNav, setShowNav] = useState(true);
   const lastScrollY = useRef(0);
@@ -120,7 +120,7 @@ export default function Header() {
           transition={{ duration: 0.5 }}
           className=" gap-4 items-center relative hidden md:flex"
         >
-          <a href="tel:+966545268787" className="hover:scale-110 transition">
+          <a onClick={handlePhoneClick} href="tel:+966545268787" className="hover:scale-110 transition">
             <CallIcon />
           </a>
 
@@ -190,7 +190,7 @@ export default function Header() {
 
               {/* Actions */}
               <div className="flex flex-col gap-4 py-6 items-center">
-                <a href="tel:+966545268787" className="flex items-center gap-2">
+                <a onClick={handlePhoneClick} href="tel:+966545268787" className="flex items-center gap-2">
                   <CallIcon />
                   <span>{t("navbar.callNow")}</span>
                 </a>

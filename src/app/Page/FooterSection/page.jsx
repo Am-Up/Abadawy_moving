@@ -9,7 +9,10 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import { useTranslation } from "react-i18next";
 import { logo } from "@/assets/indxe.js";
+import { AppContext } from "@/app/Context.jsx";
+import { useContext } from "react";
 export default function FooterSection() {
+  const { handleWhatsappClick } = useContext(AppContext);
   const { t } = useTranslation();
   return (
     <footer className="bg-gray-900 text-white py-12">
@@ -97,6 +100,7 @@ export default function FooterSection() {
             <p className="text-gray-300 mb-4">{t("footer.ctaText")}</p>
 
             <a
+              onClick={handleWhatsappClick}
               href="https://wa.me/+966545268787"
               className="bg-green-600 hover:bg-green-700 text-emerald-100 w-full flex items-center justify-center gap-2 py-2 rounded-xl"
             >

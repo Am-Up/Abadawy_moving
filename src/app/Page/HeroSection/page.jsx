@@ -7,9 +7,13 @@ import Image from "next/image";
 import { hero } from "@/assets/indxe"; // تأكد إن التصدير صح
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import CallIcon from "@mui/icons-material/Call";
+import { AppContext } from "@/app/Context.jsx";
+import { useContext } from "react";
 
 export default function HeroSection() {
   const { t } = useTranslation();
+
+  const { handlePhoneClick , handleWhatsappClick } = useContext(AppContext);
 
   return (
     <section id="hero" className="relative min-h-screen overflow-hidden flex flex-col gap-12 items-center justify-center">
@@ -65,6 +69,7 @@ export default function HeroSection() {
           transition={{ duration: 1.6 }}
           href="https://wa.me/+966545268787"
           className="bg-[#00CB4C] hover:bg-[#00d74f] w-full lg:w-56 h-14 rounded-2xl flex gap-2 justify-center items-center font-bold text-[#333333]"
+          onClick={handleWhatsappClick}
         >
           <WhatsAppIcon />
           {t("hero.whatsapp")}
@@ -76,6 +81,7 @@ export default function HeroSection() {
           transition={{ duration: 1.9 }}
           href="tel:+966545268787"
           className="border-2 border-[#333333] hover:bg-[#0D3B66] hover:text-blue-50 w-full lg:w-56 h-14 rounded-2xl flex gap-2 justify-center items-center font-bold transition"
+          onClick={handlePhoneClick}
         >
           <CallIcon />
           {t("hero.callNow")}

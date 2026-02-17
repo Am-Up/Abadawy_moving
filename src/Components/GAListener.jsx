@@ -7,7 +7,7 @@ export default function GAListener() {
   const pathname = usePathname();
 
   useEffect(() => {
-    if (typeof window.gtag === "function") {
+        if (typeof window !== "undefined" && window.gtag){
       window.gtag("config", "G-LJDZLGJXDF", {
         page_path: pathname,
       });
