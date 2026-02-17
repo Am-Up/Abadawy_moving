@@ -19,9 +19,7 @@ export const metadata = {
     description: "أفضل خدمات نقل الأثاث في السعودية، سريع وآمن وبتكاليف مناسبة. اتصل الآن!",
     url: "https://yourdomain.com/",
     type: "website",
-      icons: {
-    icon: "/favicon.png",
-  },
+   
     images: [
       {
         url: "https://yourdomain.com/logo.png",

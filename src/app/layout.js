@@ -24,21 +24,21 @@ export default function RootLayout({ children }) {
             {/* Google Analytics */}
             <Script
               strategy="afterInteractive"
-              src={`https://www.googletagmanager.com/gtag/js?id=G-LJDZLGJXDF`}
+              src={`https://www.googletagmanager.com/gtag/js?id=G-B229K9QPY2`}
             />
             <Script id="google-analytics" strategy="afterInteractive">
               {`
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
                 gtag('js', new Date());
-                gtag('config', 'G-LJDZLGJXDF', {
+                gtag('config', 'G-B229K9QPY2', {
                   page_path: window.location.pathname,
                 });
               `}
             </Script>
-            <GAListener />
+
+            <GAListener /> {/* Component لتتبع صفحات Next.js */}
             {children}
-           
           </Context>
         </Providers>
       </body>

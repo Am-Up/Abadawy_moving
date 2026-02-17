@@ -160,64 +160,71 @@ export default function Header() {
             </>
           )}
         </motion.div>
-      </header>
-
-      {menu && (
-        <div
-          className="
+        {menu && (
+          <div
+            className="
       absolute top-16 left-0 w-full
        text-white
       md:hidden z-10
       animate-dropDown 
     "
-        >
-          <div className="bg-[#0D3B66]">
-            {/* Links */}
-            <ul className="flex flex-col text-center gap-4 py-6 text-lg">
-              <li onClick={() => setMenu(false)}>{t("navbar.home")}</li>
-              <li onClick={() => setMenu(false)}>{t("navbar.about")}</li>
-              <li onClick={() => setMenu(false)}>{t("navbar.services")}</li>
-              <li onClick={() => setMenu(false)}>{t("navbar.testimonials")}</li>
-            </ul>
+          >
+            <div className="bg-[#0D3B66]">
+              {/* Links */}
+              <ul className="flex flex-col text-center gap-4 py-6 text-lg">
+                <li onClick={() => setMenu(false)}>
+                  <Link href="#hero">{t("navbar.home")}</Link>
+                </li>
+                <li onClick={() => setMenu(false)}>
+                  <Link href="#about">{t("navbar.about")}</Link>
+                </li>
+                <li onClick={() => setMenu(false)}>
+                  <Link href="#services">{t("navbar.services")}</Link>
+                </li>
+                <li onClick={() => setMenu(false)}>
+                  <Link href="#Test">{t("navbar.testimonials")}</Link>
+                </li>
+              </ul>
 
-            <hr className="border-white/30 mx-6" />
+              <hr className="border-white/30 mx-6" />
 
-            {/* Actions */}
-            <div className="flex flex-col gap-4 py-6 items-center">
-              <a href="tel:+966545268787" className="flex items-center gap-2">
-                <CallIcon />
-                <span>{t("navbar.callNow")}</span>
-              </a>
+              {/* Actions */}
+              <div className="flex flex-col gap-4 py-6 items-center">
+                <a href="tel:+966545268787" className="flex items-center gap-2">
+                  <CallIcon />
+                  <span>{t("navbar.callNow")}</span>
+                </a>
 
-              {/* Language */}
-              <div className="flex gap-3">
-                <button
-                  onClick={() => changeLang("ar")}
-                  className={`px-4 py-2 rounded-lg ${
-                    i18n.language === "ar"
-                      ? "bg-white text-black"
-                      : "bg-white/20"
-                  }`}
-                >
-                  عربي
-                </button>
+                {/* Language */}
+                <div className="flex gap-3">
+                  <button
+                    onClick={() => changeLang("ar")}
+                    className={`px-4 py-2 rounded-lg ${
+                      i18n.language === "ar"
+                        ? "bg-white text-black"
+                        : "bg-white/20"
+                    }`}
+                  >
+                    عربي
+                  </button>
 
-                <button
-                  onClick={() => changeLang("en")}
-                  className={`px-4 py-2 rounded-lg ${
-                    i18n.language === "en"
-                      ? "bg-white text-black"
-                      : "bg-white/20"
-                  }`}
-                >
-                  EN
-                </button>
+                  <button
+                    onClick={() => changeLang("en")}
+                    className={`px-4 py-2 rounded-lg ${
+                      i18n.language === "en"
+                        ? "bg-white text-black"
+                        : "bg-white/20"
+                    }`}
+                  >
+                    EN
+                  </button>
+                </div>
               </div>
             </div>
+            <div onClick={() => setMenu(false)} className="h-64 w-full"></div>
           </div>
-          <div onClick={() => setMenu(false)} className="h-64 w-full"></div>
-        </div>
-      )}
+        )}
+      </header>
     </>
   );
 }
